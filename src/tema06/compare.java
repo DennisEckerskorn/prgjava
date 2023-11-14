@@ -1,8 +1,8 @@
 package tema06;
 
-public class Ejequals {
+public class compare {
     //Función que compara la longitud de 2 strings y recorre el String y compara caracter por caracter. equals().
-    public boolean equals(String s1, String s2){
+    public static boolean equals(String s1, String s2){
         if (s1.length() != s2.length()){
             return false;
         }

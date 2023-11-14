@@ -1,11 +1,12 @@
 import tema06.EjcompareTo;
-import tema06.Ejequals;
+import tema06.compare;
 
 public class Main{
     public static void main(String[] args){
-        Ejequals equals = new Ejequals();
-        String cadenaIgual = equals.Ejequals("Hola", "Halo");
         
+        boolean cadenaIgual = compare.equals("Hola", "Halo");
+        
+        System.out.println(cadenaIgual);
 
     }
 }
