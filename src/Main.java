@@ -1,5 +1,6 @@
 import tema06.CadenasIguales;
 import tema06.EjcompareTo;
+import tema06.Concatenar;
 
 public class Main{
     public static void main(String[] args){
@@ -11,5 +12,8 @@ public class Main{
         //Si fuera a, A sería 32. La primera cadena al ser menor sale un número positivo y a l réves negativo.
         int comparacion = EjcompareTo.compararStrings("A", "a");
         System.out.println(comparacion);
+
+        String concatenarCadenas = Concatenar.concatenar("Hola,esto", " es una prueba!");
+        System.out.println(concatenarCadenas);
     }
 }
