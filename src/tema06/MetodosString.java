@@ -21,6 +21,7 @@ public class MetodosString {
 
         return sb.toString();
     }
+    
     //Compara las dos cadenas considerando el orden alfabético (de la tabla ASCII).
     public static int compareTo(String s1, String s2){
         int suma1 = 0;
@@ -38,6 +39,7 @@ public class MetodosString {
         }
         return suma1 - suma2;
     }
+
     //Devuelve la primera posición en la cual aparece un texto concreto en la cadena.
     public static int indexOf(String s1, String s2){
         for (int i = 0; i < s1.length(); i++){
@@ -48,6 +50,7 @@ public class MetodosString {
         }
         return -1;       
     }
+
     //Devuelve un segmento de una cadena que va desde un índice inicial hasta un índice final (el índice final no se incluye).
     public static String substring(String s1, int inicio, int fin){
         StringBuilder sb = new StringBuilder(fin - inicio + 1);
@@ -56,6 +59,7 @@ public class MetodosString {
         }
         return sb.toString();
     }
+
     //Devuelve la última posición en la cual aparece un texto concreto en la cadena.
     public static int lastIndexOf(String s1, String s2){
         for (int i = s1.length() - s2.length(); i >= 0; i--){
@@ -87,10 +91,18 @@ public class MetodosString {
         }
         return true;
     }
+    /*//Correcion
+    public static boolean startWith(String s1, String find){
+        return (substring(s1, 0, find.length()).equals(find));
+    }
+    //Correcion
+    public static boolean endWith(String s1, String find){
+        return(substring(s1, s1.length()).equals(find));
+    }*/
 
     //Reemplaza un caracter por otro en un String.
     public static String replace(String s1, char oldChar, char newChar) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(s1.length());
     
         for (int i = 0; i < s1.length(); i++) {
             char currentChar = s1.charAt(i);
@@ -124,3 +136,10 @@ public class MetodosString {
         return sb.toString();
     }
 }
+
+
+
+
+
+    
+
