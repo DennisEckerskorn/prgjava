@@ -49,5 +49,8 @@ public class Main{
         String palabras = Ejercicios.cuentaPalabras("Queria decirte que quiero que te vayas");
         System.out.println(palabras);
 
+        String vocalesConsonantesPalabras = Ejercicios.cuentaVocalesConsonantesPalabra("Queria decirte que quiero que te vayas");
+        System.out.println(vocalesConsonantesPalabras);
+
     }
 }

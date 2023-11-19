@@ -47,6 +47,29 @@ public class Ejercicios {
     //Ejercicio 4: Escribe un programa que muestre el número de vocales y el número de consonantes de cada palabra de una frase.
     public static String cuentaVocalesConsonantesPalabra(String s1){
         StringBuilder sb = new StringBuilder();
-        
+        //Se cortan espacios del principio y final, se dividen las palabras cada vez que encuentra uno o mas espacions y se guarda en el array.
+        String[] palabras = s1.trim().split("\\s+");
+        String vocales = "aeiouáéíóúàèìòùäëïöü";
+        String consonantes = "bcdfghjklmnñpqrstvwxyz";
+        //Primer bucle itera sobre todas las palabras del array.
+        for (int i = 0; i < palabras.length; i++){
+            String palabra = palabras[i];
+            int contadorVocales = 0;
+            int contadorConsonantes = 0;
+            //Segundo bucle itera sobre cada caracter de cada palabra.
+            for (int j = 0; j < palabra.length(); j++){
+                char letra = palabra.charAt(j);
+                if(vocales.indexOf(letra) != -1){
+                    contadorVocales++;
+                }
+                if (consonantes.indexOf(letra) != -1){
+                    contadorConsonantes++;
+                }
+            }
+            sb.append("Palabras: ").append(palabra)
+            .append(", Vocales: ").append(contadorVocales)
+            .append(", Consonantes: ").append(contadorConsonantes).append("\n");
+        }
+        return sb.toString();
     }
 }
