@@ -1,10 +1,11 @@
 import tema06.MetodosString;
+import lib.LibTema06;
 import tema06.Ejercicios;
 
 public class Main{
     public static void main(String[] args){
        
-        /*
+    /*
         //Se crea una variable booleana ya que la función devuelve un booleano. Se compara si 2 Strings son iguales.
         boolean cadenaIgual = MetodosString.equals("Hola", "Halo");
         System.out.println(cadenaIgual);
@@ -38,22 +39,28 @@ public class Main{
 
         String replaceAll = MetodosString.replaceAll("Queria decirte que quiero que te vayas", "que", "");
         System.out.println(replaceAll);
-        */
-        /* 
+    */
+
+    /*
+        //Ejercicio 1:
         String primeraLetraMayus = Ejercicios.primeraMayuscula("queria decirte que quiero que te vayas ");
         System.out.println(primeraLetraMayus);
-
+        
+        //Ejercicio 2:
         String vocalesConsonantes = Ejercicios.numeroVocalesConsonantes("Queria decirte que quiero que te vayas");
         System.out.println(vocalesConsonantes);
-
+        
+        //Ejercicio 3:
         String palabras = Ejercicios.cuentaPalabras("Queria decirte que quiero que te vayas");
         System.out.println(palabras);
-
+        
+        //Ejercicio 4:
         String vocalesConsonantesPalabras = Ejercicios.cuentaVocalesConsonantesPalabra("Queria decirte que quiero que te vayas");
         System.out.println(vocalesConsonantesPalabras);
-        */
+    */
 
-        /*Ejemplo Sacar valor minimo de un array de datos INT.
+    /*
+        //Ejemplo Sacar valor minimo de un array de datos INT.
         int datos[] = {12,-12,-13,-18,19,56,89,47};
         int minimo = Integer.MAX_VALUE;
         for (int dato : datos){
@@ -61,6 +68,24 @@ public class Main{
                 minimo = dato;
             }    
         }
-        System.out.println(minimo);*/
+        System.out.println(minimo);
+    */
+     
+        //Ejercicio 5:
+        String longitudPalabra = Ejercicios.palabraMayorLongitud("Queria decirte que quiero que te vayas");
+        System.out.println(longitudPalabra);
+
+        //Ejercicio 6:
+        int numeroVeces = LibTema06.solicitarInt("Ingresa un multiplicador para repetir la frase:");
+        String fraseRepetida = Ejercicios.fraseRepetidaN("Queria decirte que quiero que te vayas", numeroVeces);
+        System.out.println(fraseRepetida);
+    
+        //Ejercicio 7:
+        String palabraPorLinea = Ejercicios.mostrarPalabraPorLinea("Queria decirte que quiero que te vayas");
+        System.out.println(palabraPorLinea);
+    
+        //Ejercicio 8:
+        String palabrasLongitud = Ejercicios.palabrasLongitudColumnas("Queria decirte que quiero que te vayas");
+        System.out.println(palabrasLongitud);
     } 
 }

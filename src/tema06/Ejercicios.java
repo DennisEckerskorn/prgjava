@@ -73,12 +73,56 @@ public class Ejercicios {
         return sb.toString();
     }
 
-    //Escribe un programa que lea una frase y encuentre la palabra de mayor longitud. El programa debe imprimir la palabra y el número de caracteres que contiene.
-   /*  public static String palabraMayorLongitud(String frase){
+    //Ejercicio 5: Escribe un programa que lea una frase y encuentre la palabra de mayor longitud. El programa debe imprimir la palabra y el número de caracteres que contiene.
+    public static String palabraMayorLongitud(String frase){
         StringBuilder sb = new StringBuilder();
-
+        //Cortamos los espacios y separamos palabras cuando se encuentren espacios.
+        String palabras[] = frase.trim().split("\\s+");
+        int maximo = Integer.MIN_VALUE;
+        for (int i = 0; i < palabras.length; i++){
+            if(palabras[i].length() > maximo){
+                maximo = palabras[i].length();
+                //Se reinicia el StringBuilder cuando la nueva palabra maximo es encontrada.
+                sb.setLength(0);
+                sb.append(palabras[i]).append(" ").append(palabras[i].length());
+            } else if (palabras[i].length() == maximo){
+                sb.append("\n").append(palabras[i]).append(" ").append(palabras[i].length());
+            }
+        }
+       return sb.toString();
     }
-    */
+    
+    //Ejercicio 6: Escribe un programa que lea una frase y un factor de multiplicación y devuelve la frase repetida tantas veces como indique el factor de multiplicación. 
+    public static String fraseRepetidaN(String frase, int n){
+        StringBuilder sb = new StringBuilder();
+        int contadorVeces = 0;
+        for (int i = 0; i < n; i++){
+            contadorVeces++;
+            sb.append(contadorVeces).append(". ").append(frase).append("\n");
+        }
+        return sb.toString();
+    }
 
+    //Ejercicio 7: Escribe un programa que lea una frase y muestre cada palabra en una línea diferente.
+    public static String mostrarPalabraPorLinea(String frase){
+        StringBuilder sb = new StringBuilder();
+        String[] palabras = frase.trim().split("\\s+");
+        for (String palabra : palabras){
+            sb.append(palabra).append("\n");
+        }
+        return sb.toString();
+    }
+
+    //Ejercicio 8: Escribe un programa que dada una frase escriba en 2 columnas cada palabra seguida del número de caracteres que contiene.
+    public static String palabrasLongitudColumnas(String frase){
+        StringBuilder sb = new StringBuilder();
+        String[] palabras = frase.trim().split("\\s+");
+        int longitud;
+        for (String palabra : palabras){
+            longitud = palabra.length();
+            sb.append(String.format("%-20s %d\n",palabra, longitud));
+        }
+        return sb.toString();
+    }
     
 }
