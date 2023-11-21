@@ -72,4 +72,13 @@ public class Ejercicios {
         }
         return sb.toString();
     }
+
+    //Escribe un programa que lea una frase y encuentre la palabra de mayor longitud. El programa debe imprimir la palabra y el número de caracteres que contiene.
+   /*  public static String palabraMayorLongitud(String frase){
+        StringBuilder sb = new StringBuilder();
+
+    }
+    */
+
+    
 }

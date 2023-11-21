@@ -39,7 +39,7 @@ public class Main{
         String replaceAll = MetodosString.replaceAll("Queria decirte que quiero que te vayas", "que", "");
         System.out.println(replaceAll);
         */
-
+        /* 
         String primeraLetraMayus = Ejercicios.primeraMayuscula("queria decirte que quiero que te vayas ");
         System.out.println(primeraLetraMayus);
 
@@ -51,6 +51,16 @@ public class Main{
 
         String vocalesConsonantesPalabras = Ejercicios.cuentaVocalesConsonantesPalabra("Queria decirte que quiero que te vayas");
         System.out.println(vocalesConsonantesPalabras);
+        */
 
-    }
+        /*Ejemplo Sacar valor minimo de un array de datos INT.
+        int datos[] = {12,-12,-13,-18,19,56,89,47};
+        int minimo = Integer.MAX_VALUE;
+        for (int dato : datos){
+            if(dato < minimo){
+                minimo = dato;
+            }    
+        }
+        System.out.println(minimo);*/
+    } 
 }
