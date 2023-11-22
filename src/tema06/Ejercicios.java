@@ -124,5 +124,23 @@ public class Ejercicios {
         }
         return sb.toString();
     }
-    
+
+    //9. Escribe un método que dada una frase devuelva otra pero con solo los caracteres de las posiciones impares.
+    public static String posicionesImpares(String frase){
+        StringBuilder sb = new StringBuilder();
+        String[] palabras = frase.trim().split("\\s+");
+        
+        for (int i = 1; i < palabras.length; i+=2){
+            String caracteres = palabras[i];
+            sb.append(caracteres);
+        }
+        return sb.toString();
+    }
+
+    //10. Escribe un método que devuelva true si una palabra es palíndroma (se escribe igual de izquierda a derecha que de derecha a izquierda) y false si no lo es.
+    public static boolean palabraPalindroma(String frase){
+        boolean palindroma;
+
+        
+    }
 }

@@ -69,7 +69,7 @@ public class Main{
             }    
         }
         System.out.println(minimo);
-    */
+    
      
         //Ejercicio 5:
         String longitudPalabra = Ejercicios.palabraMayorLongitud("Queria decirte que quiero que te vayas");
@@ -87,5 +87,9 @@ public class Main{
         //Ejercicio 8:
         String palabrasLongitud = Ejercicios.palabrasLongitudColumnas("Queria decirte que quiero que te vayas");
         System.out.println(palabrasLongitud);
+    */
+        //Ejercicio 9:
+        String caracteresPosiscion = Ejercicios.posicionesImpares("Queria decirte que quiero que te vayas");
+        System.out.println(caracteresPosiscion);
     } 
 }
