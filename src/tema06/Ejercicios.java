@@ -139,8 +139,14 @@ public class Ejercicios {
 
     //10. Escribe un método que devuelva true si una palabra es palíndroma (se escribe igual de izquierda a derecha que de derecha a izquierda) y false si no lo es.
     public static boolean palabraPalindroma(String frase){
-        boolean palindroma;
-
-        
+        boolean palindroma = true;
+        frase = frase.toLowerCase().trim().replaceAll("\\s+", "");
+        for (int i = 0; i < frase.length() - 1 - i; i++){
+            if(frase.charAt(i) != frase.charAt(frase.length() - 1 - i)){
+                palindroma = false;
+                break;
+            }
+        }
+        return palindroma;
     }
 }

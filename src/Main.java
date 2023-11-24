@@ -87,9 +87,14 @@ public class Main{
         //Ejercicio 8:
         String palabrasLongitud = Ejercicios.palabrasLongitudColumnas("Queria decirte que quiero que te vayas");
         System.out.println(palabrasLongitud);
-    */
+    
         //Ejercicio 9:
         String caracteresPosiscion = Ejercicios.posicionesImpares("Queria decirte que quiero que te vayas");
         System.out.println(caracteresPosiscion);
+    
+    */
+        //Ejercicio 10:
+        boolean palabraPalindroma = Ejercicios.palabraPalindroma("Amo la paloma");
+        System.out.println(palabraPalindroma);
     } 
 }
