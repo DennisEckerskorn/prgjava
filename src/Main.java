@@ -92,9 +92,16 @@ public class Main{
         String caracteresPosiscion = Ejercicios.posicionesImpares("Queria decirte que quiero que te vayas");
         System.out.println(caracteresPosiscion);
     
-    */
         //Ejercicio 10:
         boolean palabraPalindroma = Ejercicios.palabraPalindroma("Amo la paloma");
         System.out.println(palabraPalindroma);
+    */
+
+        //Ejercicio 11:
+        String nombre = LibTema06.solicitarString("Ingresa tu nombre", 0, 30);
+        String apellido = LibTema06.solicitarString("Ingresa tu primer apellido", 0, 30);
+        String appelidoDos = LibTema06.solicitarString("Ingresa tu segundo appelido", 0, 30);
+        String nombreCompleto = Ejercicios.cadenaNombre(nombre, apellido, appelidoDos);
+        System.out.println(nombreCompleto);
     } 
 }

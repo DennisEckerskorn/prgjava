@@ -149,4 +149,80 @@ public class Ejercicios {
         }
         return palindroma;
     }
+
+    /* 11. Escribe un un programa que solicite tres cadenas de caracteres, una que se denomine nombre, la
+        otra primerCognom y la otra segonCognom. El programa debe crear una cadena con el nombre
+        completo y después mostrar por pantalla lo siguiente:
+        a) El nombre completo con todos el caracteres en minúscula, después en mayúscula y después su longitud.
+        b) Los 5 primeros caracteres de la cadena (solo en el caso de que la longitud sea de 5 o más caracteres).
+        c) Los dos últimos caracteres de la cadena (solo en el caso de que la longitud sea de dos o más caracteres).
+        d) El número de ocurrencias en la cadena del último carácter.
+        e) La cadena con todas las ocurrencias del primer carácter en mayúscula
+        f) La cadena con tres * por delante y por detrás.
+        g) La cadena invertida.
+    */
+
+    public static String cadenaNombre(String nombre, String cogNom, String segonCognom){
+        StringBuilder sb = new StringBuilder(nombre.length() + cogNom.length() + segonCognom.length() + 2);
+        sb.append(cadenaMinuscula(nombre, cogNom, segonCognom))
+        .append("\n")
+        .append(cadenaMayuscula(nombre, cogNom, segonCognom))
+        .append("\n")
+        .append(cadenaLongitud(nombre, cogNom, segonCognom))
+        .append(primerosCaracteres(5, nombre, cogNom, segonCognom));
+        return sb.toString();
+    }
+
+    /**
+     * Función que devuelve una cadena en minuscula.
+     * @param s1
+     * @return s1 en lowerCase
+     */
+    public static String cadenaMinuscula(String s1, String s2, String s3){
+        StringBuilder sb = new StringBuilder();
+        sb.append(s1).append(" ").append(s2).append(" ").append(s3);
+        return sb.toString().toLowerCase();
+    }
+
+    /**
+     * Función que devuelve una cadena en mayúscula.
+     * @param s1
+     * @return s1 en upperCase()
+     */
+    public static String cadenaMayuscula(String s1, String s2, String s3){
+        StringBuilder sb = new StringBuilder();
+        sb.append(s1).append(" ").append(s2).append(" ").append(s3);
+        return sb.toString().toUpperCase();
+    }
+
+    /**
+     * Función que devuelve la longitud de una cadena, eliminando espacios al principio y final y entre palabras.
+     * @param s1
+     * @return longitud en entero.
+     */
+    public static int cadenaLongitud(String s1, String s2, String s3){
+        s1 = s1.trim().replaceAll("\\s+", "");
+        int longitud = s1.length();
+        return longitud;
+    }
+
+    /**
+     * Función que devuelve los primeros caracteres de una cadena.
+     * @param nCaracteres
+     * @param s1
+     * @param s2
+     * @param s3
+     * @return s con los primeros caracteres.
+     */
+    public static String primerosCaracteres(int nCaracteres, String s1, String s2, String s3){
+        StringBuilder sb = new StringBuilder();
+         sb.append(s1).append(s2).append(s3);
+         String s = sb.toString();
+         if(sb.length() >= nCaracteres) {
+            return s.substring(0, nCaracteres);
+         }
+         return "";
+    }
+
+
 }
