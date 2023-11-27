@@ -164,7 +164,7 @@ public class Ejercicios {
     */
 
     public static String cadenaNombre(String nombre, String cogNom, String segonCognom){
-        StringBuilder sb = new StringBuilder(nombre.length() + cogNom.length() + segonCognom.length() + 2);
+        StringBuilder sb = new StringBuilder();
         sb.append(cadenaMinuscula(nombre, cogNom, segonCognom))
         .append("\n")
         .append(cadenaMayuscula(nombre, cogNom, segonCognom))
@@ -174,7 +174,10 @@ public class Ejercicios {
         .append(primerosCaracteres(5, nombre, cogNom, segonCognom))
         .append("\n")
         .append(ultimosCaracteres(2, nombre, cogNom, segonCognom))
-        .append("\n");
+        .append("\n")
+        .append(numVecesUltimoCaracter(nombre, cogNom, segonCognom))
+        .append("\n")
+        .append(ocurrenciasPrimerCaracterMayus(nombre, cogNom, segonCognom));
         return sb.toString();
     }
 
@@ -247,7 +250,76 @@ public class Ejercicios {
         return "";
     }
 
-    public static int numVecesUltimoCaracter (String s1, String s2, String s3){
-        
+    /**
+     * Función que mediante una condición busca el caracter de la última posición de cada String.
+     * Llama a otra funcion para contar las ocurrencias del último caracter.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @return devuelve un String con el resultado de cada String nombre, carácter, cantidad de veces.
+    */
+    public static String numVecesUltimoCaracter (String s1, String s2, String s3){
+        StringBuilder sb = new StringBuilder();
+        char ultimoCaracter1 = s1.length() > 0 ? s1.charAt(s1.length() - 1) : '\0';
+        char ultimoCaracter2 = s2.length() > 0 ? s2.charAt(s2.length() - 1) : '\0';
+        char ultimoCaracter3 = s3.length() > 0 ? s3.charAt(s3.length() - 1) : '\0';
+
+        int contadorUno = contarOcurrencias(s1, ultimoCaracter1);
+        int contadorDos = contarOcurrencias(s2, ultimoCaracter2);
+        int contadorTres = contarOcurrencias(s3, ultimoCaracter3);
+
+        sb.append(s1).append(" --- ").append(ultimoCaracter1).append(" --- ").append(contadorUno).append("\n")
+        .append(s2).append(" --- ").append(ultimoCaracter2).append(" --- ").append(contadorDos).append("\n")
+        .append(s3).append(" --- ").append(ultimoCaracter3).append(" --- ").append(contadorTres);
+
+        return sb.toString();
     }
+
+    /**
+     * Función que cuenta las ocurrencias de un caracter dentro de una cadena.
+     * @param cadena
+     * @param caracter
+     * @return Devuelve el número de ocurrencias en Entero.
+     */
+    public static int contarOcurrencias(String cadena, char caracter){
+        int contador = 0;
+        for (int i = 0; i < cadena.length(); i++){
+            if(cadena.charAt(i) == caracter){
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    //NO ES CORRECTO
+    public static String ocurrenciasPrimerCaracterMayus(String s1, String s2, String s3) {
+        StringBuilder sb = new StringBuilder();
+        
+        char primerCaracter = (s1.length() > 0) ? s1.charAt(0) : '\0';
+        char segundoCaracter = (s2.length() > 0) ? s2.charAt(0) : '\0';
+        char tercerCaracter = (s3.length() > 0) ? s3.charAt(0) : '\0';
+    
+        sb.append(convertirOcurrenciasMayuscula(s1, primerCaracter)).append("\n");
+        sb.append(convertirOcurrenciasMayuscula(s2, segundoCaracter)).append("\n");
+        sb.append(convertirOcurrenciasMayuscula(s3, tercerCaracter));
+    
+        return sb.toString();
+    }
+    
+    private static String convertirOcurrenciasMayuscula(String cadena, char primerCaracter) {
+        StringBuilder result = new StringBuilder();
+    
+        for (int i = 0; i < cadena.length(); i++) {
+            char currentChar = cadena.charAt(i);
+            if (currentChar == primerCaracter) {
+                result.append(Character.toUpperCase(currentChar));
+            } else {
+                result.append(currentChar);
+            }
+        }
+    
+        return result.toString();
+    }
+    
+
 }
