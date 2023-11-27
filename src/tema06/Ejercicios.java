@@ -177,7 +177,9 @@ public class Ejercicios {
         .append("\n")
         .append(numVecesUltimoCaracter(nombre, cogNom, segonCognom))
         .append("\n")
-        .append(ocurrenciasPrimerCaracterMayus(nombre, cogNom, segonCognom));
+        .append(ocurrenciasPrimerCaracterMayus(nombre, cogNom, segonCognom))
+        .append("\n")
+        .append(cadenaAsteriscos(nombre, cogNom, segonCognom));
         return sb.toString();
     }
 
@@ -291,7 +293,13 @@ public class Ejercicios {
         return contador;
     }
 
-    //NO ES CORRECTO
+    /**
+     * Función que coge el primer carácter de cada String y usa otra función para convertirla a Mayúscula.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @return Devuelve un String con las primeras letras.
+     */
     public static String ocurrenciasPrimerCaracterMayus(String s1, String s2, String s3) {
         StringBuilder sb = new StringBuilder();
         
@@ -299,27 +307,45 @@ public class Ejercicios {
         char segundoCaracter = (s2.length() > 0) ? s2.charAt(0) : '\0';
         char tercerCaracter = (s3.length() > 0) ? s3.charAt(0) : '\0';
     
-        sb.append(convertirOcurrenciasMayuscula(s1, primerCaracter)).append("\n");
-        sb.append(convertirOcurrenciasMayuscula(s2, segundoCaracter)).append("\n");
-        sb.append(convertirOcurrenciasMayuscula(s3, tercerCaracter));
+        sb.append(convertirOcurrenciasMayuscula(s1, primerCaracter))
+        .append(convertirOcurrenciasMayuscula(s2, segundoCaracter))
+        .append(convertirOcurrenciasMayuscula(s3, tercerCaracter));
     
         return sb.toString();
     }
-    
-    private static String convertirOcurrenciasMayuscula(String cadena, char primerCaracter) {
+    /**
+     * Función que convierte el primer cáracter a Mayuscula y solo concatena el primer carácter.
+     * @param cadena
+     * @param primerCaracter
+     * @return Devuelve un String con la primera en mayúscula.
+     */
+    public static String convertirOcurrenciasMayuscula(String cadena, char primerCaracter) {
         StringBuilder result = new StringBuilder();
     
-        for (int i = 0; i < cadena.length(); i++) {
-            char currentChar = cadena.charAt(i);
-            if (currentChar == primerCaracter) {
-                result.append(Character.toUpperCase(currentChar));
+        if (cadena.length() > 0){
+            char primerChar = cadena.charAt(0);
+            if (primerChar == primerCaracter) {
+                result.append(Character.toUpperCase(primerChar));
             } else {
-                result.append(currentChar);
+                result.append(primerChar);
             }
         }
-    
         return result.toString();
     }
+    
+    /**
+     * Función que añade 3 asteriscos al principio y final de la cadena.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @return Devuelve un String concatenado por varios Strings.
+     */
+    public static String cadenaAsteriscos(String s1, String s2, String s3){
+        StringBuilder sb = new StringBuilder();
+        sb.append("*** ").append(s1).append(" ").append(s2).append(" ").append(s3).append(" ***");
+        return sb.toString();
+    }
+
     
 
 }
