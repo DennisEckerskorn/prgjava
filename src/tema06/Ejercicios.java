@@ -162,7 +162,13 @@ public class Ejercicios {
         f) La cadena con tres * por delante y por detrás.
         g) La cadena invertida.
     */
-
+    /**
+     * Función que hace uso de otra funciones para mostrar resultados de los ejercicios.
+     * @param nombre
+     * @param cogNom
+     * @param segonCognom
+     * @return Devuelve un String con todos los resultados.
+     */
     public static String cadenaNombre(String nombre, String cogNom, String segonCognom){
         StringBuilder sb = new StringBuilder();
         sb.append(cadenaMinuscula(nombre, cogNom, segonCognom))
@@ -365,5 +371,38 @@ public class Ejercicios {
             invertido.append(sb.charAt(i));
         }
         return invertido.toString();
+    }
+
+    /*
+    * 12. Escribe un método que, dada una cadena de caracteres, sustituya todas las ocurrencias del texto
+    * «es» por «no por». Escribe un segundo método que sustituya todos el grupos de dígitos por un
+    * único carácter *, es decir, si la cadena de caracteres es «esto1234es5678bueno900», el primer
+    * método tiene que devolver «no porto1234no por5678bueno900» y el segundo tiene que devolver
+    * «esto*es*bueno*».
+    * Nota:
+    * a) La expresión regular \\d+ significa un dígito o más.
+    * b) Podemos usar replaceAll(“\\d”, “*”);
+    */
+
+    /**
+     * Función que reemplaza unos caracteres por otros.
+     * @param s1
+     * @return Devuelve un String con los caracteres reemplazados.
+     */
+    public static String sustituirOccurencias(String s1){
+        StringBuilder sb = new StringBuilder();
+        sb.append(s1.replaceAll("es", "no por"));
+        return sb.toString();
+    }
+
+    /**
+     * Función que busca todos los dígitos y los reemplaza por un caracter especial *.
+     * @param s1
+     * @return Devuelve un String con el resultado del reemplazo.
+     */
+    public static String sustituirDigitos(String s1){
+        StringBuilder sb = new StringBuilder();
+        sb.append(s1.replaceAll("\\d+", "*"));
+        return sb.toString();
     }
 }
