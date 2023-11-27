@@ -179,7 +179,9 @@ public class Ejercicios {
         .append("\n")
         .append(ocurrenciasPrimerCaracterMayus(nombre, cogNom, segonCognom))
         .append("\n")
-        .append(cadenaAsteriscos(nombre, cogNom, segonCognom));
+        .append(cadenaAsteriscos(nombre, cogNom, segonCognom))
+        .append("\n")
+        .append(cadenaInvertida(nombre, cogNom, segonCognom));
         return sb.toString();
     }
 
@@ -313,6 +315,7 @@ public class Ejercicios {
     
         return sb.toString();
     }
+    
     /**
      * Función que convierte el primer cáracter a Mayuscula y solo concatena el primer carácter.
      * @param cadena
@@ -346,6 +349,21 @@ public class Ejercicios {
         return sb.toString();
     }
 
+    /**
+     * Función que recibe 3 strings, concatena los string e invierte la cadena proporcionada.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @return Devuelve un String con la cadena invertida.
+     */
+    public static String cadenaInvertida(String s1, String s2, String s3) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(s1).append(" ").append(s2).append(" ").append(s3);
     
-
+        StringBuilder invertido = new StringBuilder();
+        for (int i = sb.length() - 1; i >= 0; i--) {
+            invertido.append(sb.charAt(i));
+        }
+        return invertido.toString();
+    }
 }
