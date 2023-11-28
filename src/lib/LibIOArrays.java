@@ -1,12 +1,74 @@
 package lib;
-import lib.LibEntradaSalida;
+
 public class LibIOArrays {
-    
+    /**
+     * Función para mostrar los números de un array de enteros.
+     * @param array Array de números enteros.
+     */
+    public static void showArray(int[] array){
+        for (int i = 0; i < array.length; i++){
+             System.out.printf("array[%d] = %d\n", i, array[i]);
+        } 
+     }
+     /**
+      * Función para mostrar los carácteres de un array de carácteres.
+      * @param array Array de carácteres.
+      */
+     public static void showArray(char[] array){
+         for (int i = 0; i < array.length; i++){
+             System.out.printf("array[%d] = %c\n", i, array[i]);
+         }
+     }
+      /**
+      * Función para mostrar números decimales(Double) de un array.
+      * @param array Array de double.
+      */
+     public static void showArray(double[] array){
+         for (int i = 0; i < array.length; i++){
+             System.out.printf("array[%d] = %e\n", i, array[i]);
+         }
+     }
+     /**
+      * Función que muestra la lista de números del array de forma tabulada, cuando se llega a 4 elementos se añade un salto de línea.
+      * @param array array de enteros.
+      */
+     public static void showArrayFormated(int[] array){
+        for (int i = 0; i < array.length; i++){
+            System.out.printf("array[%d] = %d\t", i, array[i]);
+            if ((i + 1) % 4 == 0){
+                System.out.printf("\n");
+            }
+        }
+     }
+
+    /**
+     * Función que pide números enteros para un array de enteros. Usa la función solicitarEntero para leer y validar el valor min y max.
+     * @param array Array de números enteros.
+     */
     public static void solicitarDatosArray(int[] array){
         for (int i = 0; i < array.length; i++){
-            System.out.printf("a[%d]\n", i);
-            array[i] = LibEntradaSalida.solicitarInt("Ingresa un número", 0, 500);
-            
+            System.out.printf("array[%d]\n", i);
+            array[i] = LibEntradaSalida.solicitarEntero("Ingresa un número", 0, 500);
+        }
+    }
+    /**
+     * Función que pide carácteres para un array de carácteres. usa la función solicitarCaracter para mostrar un mensaje y leer el carácter.
+     * @param array Array de carácteres.
+     */
+    public static void solicitarDatosArray(char[] array){
+        for (int i = 0; i < array.length; i++){
+            System.out.printf("array[%c]\n", i);
+            array[i] = LibEntradaSalida.solicitarCaracter("Ingresa un carácter");
+        }
+    }
+    /**
+     * Función para generar números aleatorios de tipo double dentro de un array.
+     * @param array array de numeros decimales (double).
+     */
+    public static void numerosAleatoriosArray(double[] array){
+        for (int i = 0; i < array.length; i++){
+            array[i] = LibEntradaSalida.random(0.0, 10.0);
+            System.out.printf("array[%d] = %.2f\n", i, array[i]); 
         }
     }
 }

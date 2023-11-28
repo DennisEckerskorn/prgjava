@@ -32,15 +32,45 @@ public class LibEntradaSalida {
 		}while(!valido);
 		return resultado;
 	}
+	/**
+	 * Función para simplemente leer un carácter.
+	 * @param mensaje 
+	 * @return devuelve el carácter introducido por el usuario.
+	 */
+	public static char solicitarCaracter(String mensaje){
+		System.out.println("Ingresa un carácter:");
+		return lector.nextLine().charAt(0);
+	}
 
-	//Función para leer un caracter, FALTA VALIDAR Y ACABAR.
+	/**
+	 * Función para leer un carácter y validar si el carácter introducido es el carácter deseado.
+	 * @param mensaje
+	 * @param op1
+	 * @return devuelve un carácter introducido si es válido.
+	 */
+	public static char solicitarCaracter(String mensaje, char op1){
+		char resultado;
+		boolean valido;
+		do{
+			System.out.println(mensaje);
+			resultado = lector.nextLine().toLowerCase().charAt(0);
+			valido = resultado == Character.toLowerCase(op1);
+			if(!valido){
+				System.out.printf("Error => El carácter debe ser %c o %c\n", op1);
+			}
+		}while(!valido);
+		return resultado;
+	}
+
+	//Función para leer un caracter y validar si los caracteres introducidos son los caracteres deseados.
 	public static char solicitarCaracter(String mensaje, char op1, char op2){
 		char resultado;
 		boolean valido;
 		do{
 			System.out.println(mensaje);
 			resultado = lector.nextLine().toLowerCase().charAt(0);
-			valido = resultado == Character.toLowerCase(op1) || resultado == Character.toLowerCase(op2);
+			valido = (op1 + "" + op2).toLowerCase().indexOf(resultado) != -1;
+			//valido = resultado == Character.toLowerCase(op1) || resultado == Character.toLowerCase(op2);
 			if(!valido){
 				System.out.printf("Error => El carácter debe ser %c o %c\n", op1, op2);
 			}
@@ -63,13 +93,13 @@ public class LibEntradaSalida {
 		return resultado;
 	}
 
-	//Función para leer un Double, validando valor min y max.
+	//Función para leer un Float, validando valor min y max.
 	public static double solicitarFloat(String mensaje, float valorMin, float valorMax){
 		boolean valido;
 		float resultado;
 		do{
 			System.out.println(mensaje);
-			resultado = float.parseFloat(lector.nextLine());
+			resultado = Float.parseFloat(lector.nextLine());
 			valido = (resultado >= valorMin && resultado <= valorMax);
 			if (!valido){
 				System.out.printf("Error => Valor mínimo: %e, Valor máximo: %e\n", valorMin, valorMax);
@@ -93,7 +123,7 @@ public class LibEntradaSalida {
 		return resultado;
 	}
 
-	//Función para solicitar un entero, especificamente para un DNI.
+	//Función para solicitar un Entero, especificamente para un DNI.
 	public static int solicitarDNI(String mensaje, int valorMin, int valorMax){
 		boolean valido;
 		int resultado;

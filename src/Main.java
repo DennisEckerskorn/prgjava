@@ -1,7 +1,6 @@
 import tema06.MetodosString;
 import lib.*;
 import tema06.Ejercicios;
-import tema06.EjerciciosArrays;
 
 public class Main{
     public static void main(String[] args){
@@ -111,10 +110,33 @@ public class Main{
 
         String cadenaDigitos = Ejercicios.sustituirDigitos("esto1234es5678bueno900");
         System.out.println(cadenaDigitos);
-    */
-
+*/
+/*
         //Ejercicio 13:
-        EjerciciosArrays.arrayNumerosMedia();
+        int [] arrayNum = new int[10];
+        LibIOArrays.solicitarDatosArray(arrayNum);
+        LibIOArrays.showArray(arrayNum);
+        float media = LibArrays.calcularMediaArray(arrayNum);
+        System.out.printf("La media del array es: %.2f\n", media);
         
+        //Ejercicio 14:
+        char [] arrayCaracter = new char [10];
+        LibIOArrays.solicitarDatosArray(arrayCaracter);
+        LibIOArrays.showArray(arrayCaracter);
+        LibArrays.posicionArrayPar(arrayCaracter);
+        LibArrays.posicionArrayImpar(arrayCaracter);
+
+        //Ejercicio 15:
+        int [] arrayNumerico = new int[20];
+        LibIOArrays.solicitarDatosArray(arrayNumerico);
+        LibIOArrays.showArrayFormated(arrayNumerico);
+*/
+        //Ejercicio 16:
+        double [] arrayAleatorio = new double [30];
+        LibIOArrays.numerosAleatoriosArray(arrayAleatorio);
+        double mediaNotas = LibArrays.calcularMediaArray(arrayAleatorio);
+        System.out.printf("La media total de las notas es: %.2f\n", mediaNotas);
+
+
     } 
 }
