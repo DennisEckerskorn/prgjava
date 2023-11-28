@@ -1,6 +1,7 @@
 import tema06.MetodosString;
-import lib.LibTema06;
+import lib.*;
 import tema06.Ejercicios;
+import tema06.EjerciciosArrays;
 
 public class Main{
     public static void main(String[] args){
@@ -95,7 +96,7 @@ public class Main{
         //Ejercicio 10:
         boolean palabraPalindroma = Ejercicios.palabraPalindroma("Amo la paloma");
         System.out.println(palabraPalindroma);
-    */
+    
 
         //Ejercicio 11:
         String nombre = LibTema06.solicitarString("Ingresa tu nombre", 0, 30);
@@ -110,5 +111,10 @@ public class Main{
 
         String cadenaDigitos = Ejercicios.sustituirDigitos("esto1234es5678bueno900");
         System.out.println(cadenaDigitos);
+    */
+
+        //Ejercicio 13:
+        EjerciciosArrays.arrayNumerosMedia();
+        
     } 
 }
