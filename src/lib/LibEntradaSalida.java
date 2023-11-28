@@ -7,18 +7,33 @@ public class LibEntradaSalida {
     private static  Scanner lector = new Scanner(System.in);
 	private static Random rnd = new Random();
 	
-    
-	//Función para devolver un numero aleatorio entre un rango min y max.
+    /**
+	 * Función para devolver un numero aleatorio entre un rango min y max (INTEGER).
+	 * @param min valor min(incluido).
+	 * @param max valor max(incluido).
+	 * @return devuelve números aleatorios dentro del rango min y max de tipo entero.
+	 */
 	public static int random(int min, int max){
 		return rnd.nextInt(max - min + 1) + min;
 	}
 
-	//Función para devolver un numero aleatorio entre un rango min y max con decimales.
+	/**
+	 * Función para devolver un numero aleatorio entre un rango min y max (DOUBLE).
+	 * @param min valor min(incluido).
+	 * @param max valor max(incluido).
+	 * @return devuelve números aleatorios dentro del rango min y max de tipo double.
+	 */
 	public static double random(double min, double max){
 		return rnd.nextDouble() * (max - min) + min;
 	}
 
-	//Función para leer un String, validando valor min y max.
+	/**
+	 * Función para leer un String con Scanner, validando el valor min y max (longitud).
+	 * @param mensaje tipo String, mensaje que se muestra por pantalla.
+	 * @param longitudMinima tipo entero, longitud mínima del String.
+	 * @param longitudMaxima tipo entero, longitud máxima del String.
+	 * @return devuelve el String ingresado por el usuario, si es válido. Si no, devuelve un mensaje y repite hasta que sea váldio. 
+	 */
 	public static String solicitarString(String mensaje, int longitudMinima, int longitudMaxima){
 		boolean valido;
 		String resultado;
@@ -32,9 +47,10 @@ public class LibEntradaSalida {
 		}while(!valido);
 		return resultado;
 	}
+
 	/**
-	 * Función para simplemente leer un carácter.
-	 * @param mensaje 
+	 * Función para leer un carácter con Scanner.
+	 * @param mensaje muestra un mensaje por pantalla.
 	 * @return devuelve el carácter introducido por el usuario.
 	 */
 	public static char solicitarCaracter(String mensaje){
@@ -43,10 +59,10 @@ public class LibEntradaSalida {
 	}
 
 	/**
-	 * Función para leer un carácter y validar si el carácter introducido es el carácter deseado.
-	 * @param mensaje
-	 * @param op1
-	 * @return devuelve un carácter introducido si es válido.
+	 * Función para leer un carácter con Scanner y validar si el carácter introducido es el carácter deseado.
+	 * @param mensaje tipo String, muestra un mensaje por pantalla.
+	 * @param op1 tipo char.
+	 * @return devuelve un carácter ingresado por consola, si es el carácter deseado, si no muestra un mensaje y vuelve a pedir el carácter.
 	 */
 	public static char solicitarCaracter(String mensaje, char op1){
 		char resultado;
@@ -62,7 +78,13 @@ public class LibEntradaSalida {
 		return resultado;
 	}
 
-	//Función para leer un caracter y validar si los caracteres introducidos son los caracteres deseados.
+	/**
+	 * Función para leer dos caracteres con Scanner y validar si los caracteres introducidos son los caracteres deseados.
+	 * @param mensaje tipo String, muestra un mensaje por pantalla.
+	 * @param op1 tipo char.
+	 * @param op2 tipo char.
+	 * @return devuelve los caracteres ingresados por consola, si los caracteres son los deseados los muestra, si no muestra un mensaje y vuelve a pedir los caracteres.
+	 */
 	public static char solicitarCaracter(String mensaje, char op1, char op2){
 		char resultado;
 		boolean valido;
