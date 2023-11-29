@@ -42,7 +42,7 @@ public class LibArrays {
      * @param num numero de tipo entero para la condición.
      * @return devuelve la media de los elementos que sean >= que num.
      */
-    public static double calcularMediaMayorQueArray(double[]array, int num){
+    public static double calcularMediaMayorQueArray(double[]array, double num){
         if(array.length == 0){
             return 0.0;
         }
@@ -58,6 +58,22 @@ public class LibArrays {
             return -1.0;
         }
         return (double) suma / array.length;
+    }
+
+    /**
+     * Función para contar la cantidad de veces que un número sea mayor o igual que el elemento del array.
+     * @param array array de doubles
+     * @param num numero de tipo double.
+     * @return devuelve un entero con las veces que aparace un número igual o mayor que array[i].
+     */
+    public static int contarElementosArray(double[] array, double num){
+        int contador = 0;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] >= num){
+                contador++;
+            }
+        }
+        return contador;
     }
 
     /**

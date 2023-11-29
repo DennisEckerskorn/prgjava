@@ -111,7 +111,7 @@ public class Main{
         String cadenaDigitos = Ejercicios.sustituirDigitos("esto1234es5678bueno900");
         System.out.println(cadenaDigitos);
 */
-        /* 
+/*
         //Ejercicio 13:
         int [] arrayNum = new int[10];
         LibIOArrays.solicitarDatosArray(arrayNum);
@@ -129,9 +129,10 @@ public class Main{
         //Ejercicio 15:
         int [] arrayNumerico = new int[20];
         LibIOArrays.solicitarDatosArray(arrayNumerico);
-        LibIOArrays.showArrayFormated(arrayNumerico);
-*/
-        //Ejercicio 16:
+        String formatted = LibIOArrays.showArrayFormated(arrayNumerico);
+        System.out.println(formatted);
+
+      //Ejercicio 16:
         double [] arrayAleatorio = new double [30];
         LibIOArrays.showRandomNumbersArray(arrayAleatorio);
         double mediaNotas = LibArrays.calcularMediaArray(arrayAleatorio);
@@ -139,5 +140,13 @@ public class Main{
         double mediaNotasMayorQue = LibArrays.calcularMediaMayorQueArray(arrayAleatorio, 5);
         LibIOArrays.showRandomNumbersArrayGreaterThen(arrayAleatorio, 5);
         System.out.printf("La media de los valores mayor o igual que 5 es: %.2f\n", mediaNotasMayorQue);
+
+*/
+        double[] arrayEstaturas = new double[30];
+        LibIOArrays.showRandomNumbersArray(arrayEstaturas);
+        double mediaTotal = LibArrays.calcularMediaArray(arrayEstaturas);
+        int mediaMayorQue = LibArrays.contarElementosArray(arrayEstaturas, mediaTotal);
+        System.out.printf("La media de todos los elementos es %.2f y son %d números mayores que la media total.", mediaTotal, mediaMayorQue);
+
     } 
 }

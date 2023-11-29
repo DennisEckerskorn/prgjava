@@ -1,7 +1,8 @@
 package lib;
 
 public class LibIOArrays {
-    
+        private static int minValue = Integer.MIN_VALUE;
+        private static int maxValue = Integer.MAX_VALUE;
     /**
      * Función para mostrar los números de un array de enteros.
      * @param array Array de números enteros.
@@ -36,14 +37,31 @@ public class LibIOArrays {
       * Función que muestra la lista de números del array de forma tabulada, cuando se llega a 4 elementos se añade un salto de línea.
       * @param array array de enteros.
       */
-     public static void showArrayFormated(int[] array){
+     public static String showArrayFormated(int[] array){
+        int max = minValue;
+        int min = maxValue;
+
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < array.length; i++){
-            System.out.printf("array[%d] = %d\t", i, array[i]);
-            if ((i + 1) % 4 == 0){
-                System.out.printf("\n");
+            if(array[i] > max){
+                max = array[i];
             }
+                
+            if(array[i] < min){
+                min = array[i];
+            }
+
+            int anchoColumna = Math.max(String.valueOf(min).length(), String.valueOf(max).length() + 1);
+            
+            for (int j = 0; j < 4; j++){
+                sb.append(String.format("%-" + anchoColumna + "d", array[i]));
+            }
+            sb.append("\n");
         }
+        return sb.toString();
      }
+
+
 
      /**
      * Función para generar números aleatorios de tipo double dentro de un array.
@@ -76,7 +94,7 @@ public class LibIOArrays {
     public static void solicitarDatosArray(int[] array){
         for (int i = 0; i < array.length; i++){
             System.out.printf("array[%d]\n", i);
-            array[i] = LibEntradaSalida.solicitarEntero("Ingresa un número", 0, 500);
+            array[i] = LibEntradaSalida.solicitarEntero("Ingresa un número", minValue, maxValue );
         }
     }
 
@@ -86,8 +104,28 @@ public class LibIOArrays {
      */
     public static void solicitarDatosArray(char[] array){
         for (int i = 0; i < array.length; i++){
-            System.out.printf("array[%c]\n", i);
+            System.out.printf("array[%d]\n", i);
             array[i] = LibEntradaSalida.solicitarCaracter("Ingresa un carácter");
+        }
+    }
+    /**
+     * Función que pide cadenas de texto para un array de Strings. Usa la función solicitarString para leer la cadena.
+     * @param array array de String
+     */
+    public static void solicitarDatosArray(String[] array){
+        for (int i = 0;i < array.length; i++){
+            System.out.printf("array[%d]\n", i);
+            array[i] = LibEntradaSalida.solicitarString("Ingresa una cadena de texto:", 0, 100);
+        }
+    }
+    /**
+     * Función que pide números con decimales para un array de double. Usa la función solicitarDouble para leer los números.
+     * @param array
+     */
+    public static void solicitarDatosArray(double[] array){
+        for (int i = 0;i < array.length; i++){
+            System.out.printf("array[%d]\n", i);
+            array[i] = LibEntradaSalida.solicitarDouble("Ingresa una número con decimales:", 0, 100);
         }
     }
     

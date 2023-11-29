@@ -57,6 +57,15 @@ public class LibEntradaSalida {
 		System.out.println("Ingresa un carácter:");
 		return lector.nextLine().charAt(0);
 	}
+	/**
+	 * Función para leer un double con Scanner.
+	 * @param mensaje muestra un mensaje por pantalla.
+	 * @return devuelve un double introducido por el usuario.
+	 */
+	public static double solicitarDouble(String mensaje){
+		System.out.println("Ingresa un número con decimales:");
+		return Double.parseDouble(lector.nextLine());
+	}
 
 	/**
 	 * Función para leer un carácter con Scanner y validar si el carácter introducido es el carácter deseado.
