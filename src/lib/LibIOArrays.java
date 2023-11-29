@@ -32,7 +32,7 @@ public class LibIOArrays {
          }
      }
 
-     /**
+     /** Corregir min-value y max-value (Math.max(String.valueOf(min).length)). Ajustar ancho columna sin usar tabulador
       * Función que muestra la lista de números del array de forma tabulada, cuando se llega a 4 elementos se añade un salto de línea.
       * @param array array de enteros.
       */
