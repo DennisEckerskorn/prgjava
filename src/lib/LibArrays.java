@@ -103,4 +103,23 @@ public class LibArrays {
             System.out.printf("a[%d] = %c\n", i, array[i]);
         }
     }
+
+
+    public static double[] sumaArrays(double[] arrayUno, double[] arrayDos){
+        int longitud = arrayUno.length; 
+        double[] resultado = new double[longitud];
+        for (int i = 0; i < longitud; i++){
+              resultado[i] = arrayUno[i] + arrayDos[i];
+        }
+        return resultado;
+    }
+
+    public static double[] divisionArrays(double[] arrayUno, double[] arrayDos){
+        int longitud = arrayUno.length; 
+        double[] resultado = new double[longitud];
+        for (int i = 0; i < longitud; i++){
+              resultado[i] = arrayUno[i] / arrayDos[i];
+        }
+        return resultado;
+    }
 }

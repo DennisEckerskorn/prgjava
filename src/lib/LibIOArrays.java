@@ -31,8 +31,16 @@ public class LibIOArrays {
       */
      public static void showArray(double[] array){
          for (int i = 0; i < array.length; i++){
-             System.out.printf("array[%d] = %e\n", i, array[i]);
+             System.out.printf("array[%d] = %.2f\n", i, array[i]);
          }
+     }
+
+     public static void showArrayInLine(double[] array){
+        for (int i = 0; i < array.length; i++){
+            System.out.printf("[%.2f] ", array[i]);
+        }
+        System.out.printf("\n");
+
      }
 
      /** Corregir min-value y max-value (Math.max(String.valueOf(min).length)). Ajustar ancho columna sin usar tabulador

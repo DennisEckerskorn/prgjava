@@ -1,13 +1,32 @@
-import tema06.MetodosString;
+//import tema06.MetodosString;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 import lib.*;
-import tema06.Ejercicios;
+//import tema06.Ejercicios;
 
 public class Main{
     public static void main(String[] args){
-       
+        
+    /*
+         
+        //Ejercicio args clase:
+        if(args.length != 11){
+            System.out.println("Proporciona exactamente 11 argumentos (10 elementos del array y 1 argumento para la función)");
+            return;
+        }
+        double[] valores = new double[args.length];
+        for (int i = 0; i < args.length;i++){
+            valores[i] = Double.parseDouble(args[i]);    
+        }
+
+        //LibIOArrays.showArray(valores);
+
+        double argumentoFuncion = Double.parseDouble(args[10]);
+
+        double[] arrayMayores = LibArrays.contarElementosArrayMayorQue(valores, argumentoFuncion);
+        LibIOArrays.showArray(arrayMayores);
+    */
     /*
         //Se crea una variable booleana ya que la función devuelve un booleano. Se compara si 2 Strings son iguales.
         boolean cadenaIgual = MetodosString.equals("Hola", "Halo");
@@ -143,7 +162,7 @@ public class Main{
         double mediaNotasMayorQue = LibArrays.calcularMediaMayorQueArray(arrayAleatorio, 5);
         LibIOArrays.showRandomNumbersArrayGreaterThen(arrayAleatorio, 5);
         System.out.printf("La media de los valores mayor o igual que 5 es: %.2f\n", mediaNotasMayorQue);
-*/
+
         //Ejercicio 17:
         int posiciones = LibEntradaSalida.solicitarInteger("Ingresa el tamaño del array (número entero)");
         double[] arrayEstaturas = LibIOArrays.inicializarArrayDouble(posiciones);
@@ -152,11 +171,28 @@ public class Main{
         double[] mediaMayorQue = LibArrays.contarElementosArrayMayorQue(arrayEstaturas, mediaTotal);
         System.out.printf("La media de todos los elementos es %.2f\n", mediaTotal);
         System.out.printf("Los elementos mayor que la media total %s", Arrays.toString(mediaMayorQue));
+    */
+
+        //Ejercicio 18:
+        double[] sumaUno = LibIOArrays.inicializarArrayDouble(10);
+        LibIOArrays.solicitarDatosArray(sumaUno);
+
+        double[] sumaDos = LibIOArrays.inicializarArrayDouble(10);
+        LibIOArrays.solicitarDatosArray(sumaDos);
+
+        double[] resultadoSuma = LibArrays.sumaArrays(sumaUno, sumaDos);
+        double[] resultadoDivision = LibArrays.divisionArrays(sumaUno, sumaDos);
         
+        System.out.printf("Array 1:\n");
+        LibIOArrays.showArrayInLine(sumaUno);
 
+        System.out.printf("Array 2:\n");
+        LibIOArrays.showArrayInLine(sumaDos);
         
-
-
-
+        System.out.printf("Resultado Suma Array 1 + Array 2\n");
+        LibIOArrays.showArrayInLine(resultadoSuma);
+        
+        System.out.printf("Resultado División Array 1 / Array 2\n");
+        LibIOArrays.showArrayInLine(resultadoDivision);
     } 
 }
