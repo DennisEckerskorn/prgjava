@@ -57,6 +57,17 @@ public class LibEntradaSalida {
 		System.out.println("Ingresa un carácter:");
 		return lector.nextLine().charAt(0);
 	}
+	
+	/**
+	 * Función para leer un Integer con Scanner para determinar el tamaño del array.
+	 * @param mensaje 
+	 * @return devuelve un Integer introducido por el usuario.
+	 */
+	public static int solicitarInteger(String mensaje){
+		System.out.println(mensaje);
+		return Integer.parseInt(lector.nextLine());
+	}
+	
 	/**
 	 * Función para leer un double con Scanner.
 	 * @param mensaje muestra un mensaje por pantalla.

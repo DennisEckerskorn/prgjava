@@ -140,13 +140,13 @@ public class Main{
         double mediaNotasMayorQue = LibArrays.calcularMediaMayorQueArray(arrayAleatorio, 5);
         LibIOArrays.showRandomNumbersArrayGreaterThen(arrayAleatorio, 5);
         System.out.printf("La media de los valores mayor o igual que 5 es: %.2f\n", mediaNotasMayorQue);
-
 */
-        double[] arrayEstaturas = new double[30];
-        LibIOArrays.showRandomNumbersArray(arrayEstaturas);
+        //Ejercicio 17:
+        int posiciones = LibEntradaSalida.solicitarInteger("Ingresa el tamaño del array (número entero)");
+        double[] arrayEstaturas = LibIOArrays.inicializarArrayDouble(posiciones);
+        LibIOArrays.solicitarDatosArray(arrayEstaturas);
         double mediaTotal = LibArrays.calcularMediaArray(arrayEstaturas);
         int mediaMayorQue = LibArrays.contarElementosArray(arrayEstaturas, mediaTotal);
-        System.out.printf("La media de todos los elementos es %.2f y son %d números mayores que la media total.", mediaTotal, mediaMayorQue);
-
+        System.out.printf("La media de todos los elementos es %.2f y hay %d números mayores que la media total.", mediaTotal, mediaMayorQue);
     } 
 }

@@ -1,8 +1,10 @@
 package lib;
 
 public class LibIOArrays {
-        private static int minValue = Integer.MIN_VALUE;
-        private static int maxValue = Integer.MAX_VALUE;
+        private static int integerMinValue = Integer.MIN_VALUE;
+        private static int integerMaxValue = Integer.MAX_VALUE;
+        private static double doubleMinValue = Double.MIN_VALUE;
+        private static double doubleMaxValue = Double.MAX_VALUE;
     /**
      * Función para mostrar los números de un array de enteros.
      * @param array Array de números enteros.
@@ -38,8 +40,8 @@ public class LibIOArrays {
       * @param array array de enteros.
       */
      public static String showArrayFormated(int[] array){
-        int max = minValue;
-        int min = maxValue;
+        int max = integerMinValue;
+        int min = integerMaxValue;
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < array.length; i++){
@@ -60,8 +62,6 @@ public class LibIOArrays {
         }
         return sb.toString();
      }
-
-
 
      /**
      * Función para generar números aleatorios de tipo double dentro de un array.
@@ -94,7 +94,7 @@ public class LibIOArrays {
     public static void solicitarDatosArray(int[] array){
         for (int i = 0; i < array.length; i++){
             System.out.printf("array[%d]\n", i);
-            array[i] = LibEntradaSalida.solicitarEntero("Ingresa un número", minValue, maxValue );
+            array[i] = LibEntradaSalida.solicitarEntero("Ingresa un número", integerMinValue, integerMaxValue );
         }
     }
 
@@ -108,6 +108,7 @@ public class LibIOArrays {
             array[i] = LibEntradaSalida.solicitarCaracter("Ingresa un carácter");
         }
     }
+
     /**
      * Función que pide cadenas de texto para un array de Strings. Usa la función solicitarString para leer la cadena.
      * @param array array de String
@@ -118,6 +119,7 @@ public class LibIOArrays {
             array[i] = LibEntradaSalida.solicitarString("Ingresa una cadena de texto:", 0, 100);
         }
     }
+
     /**
      * Función que pide números con decimales para un array de double. Usa la función solicitarDouble para leer los números.
      * @param array
@@ -125,8 +127,27 @@ public class LibIOArrays {
     public static void solicitarDatosArray(double[] array){
         for (int i = 0;i < array.length; i++){
             System.out.printf("array[%d]\n", i);
-            array[i] = LibEntradaSalida.solicitarDouble("Ingresa una número con decimales:", 0, 100);
+            array[i] = LibEntradaSalida.solicitarDouble("Ingresa una número con decimales:", doubleMinValue, doubleMaxValue);
         }
     }
-    
+
+    /**
+     * Función para inicializar un array de enteros con tamaño p.
+     * @param p posiciones del array
+     * @return devuelve un array de enteros con tamaño p.
+     */
+    public static int[] inicializarArrayInteger(int p){
+        int[] arrayInteger = new int[p];
+        return arrayInteger;
+    }
+
+    /**
+     * Función para inicializar un array de double con tamaño p.
+     * @param p posiciones del array.
+     * @return devuelve un array de double con tamaño p.
+     */
+    public static double[] inicializarArrayDouble(int p){
+        double[] arrayDouble = new double[p];
+        return arrayDouble;
+    }
 }
