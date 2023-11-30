@@ -142,6 +142,16 @@ public class LibIOArrays {
     }
 
     /**
+     * Función para inicializar un array de float con tamaño p.
+     * @param p posiciones del array
+     * @return devuelve un array de float con tamaño p.
+     */
+    public static float[] inicializarArrayFloat(int p){
+        float[] arrayFloat = new float[p];
+        return arrayFloat;
+    }
+
+    /**
      * Función para inicializar un array de double con tamaño p.
      * @param p posiciones del array.
      * @return devuelve un array de double con tamaño p.
@@ -149,5 +159,25 @@ public class LibIOArrays {
     public static double[] inicializarArrayDouble(int p){
         double[] arrayDouble = new double[p];
         return arrayDouble;
+    }
+
+    /**
+     * Función para inicializar un array de char con tamaño p.
+     * @param p posiciones del array.
+     * @return devuelve un array de char con tamaño p.
+     */
+    public static char[] inicializarArrayChar(int p){
+        char[] arrayChar = new char[p];
+        return arrayChar;
+    }
+
+    /**
+     * Función para inicializar un array de String con tamaño p.
+     * @param p posiciones del array.
+     * @return devuelve un array de String con tamaño p.
+     */
+    public static String[] inicializarArrayString(int p){
+        String[] arrayString = new String[p];
+        return arrayString;
     }
 }
