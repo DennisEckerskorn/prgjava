@@ -66,14 +66,22 @@ public class LibArrays {
      * @param num numero de tipo double.
      * @return devuelve un entero con las veces que aparace un número igual o mayor que array[i].
      */
-    public static int contarElementosArray(double[] array, double num){
+    public static double[] contarElementosArrayMayorQue(double[] array, double num){
+        double[] resultado;
         int contador = 0;
         for (int i = 0; i < array.length; i++){
-            if (array[i] >= num){
+            if (array[i] > num){
                 contador++;
             }
         }
-        return contador;
+        resultado = new double[contador];
+        contador = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] > num){
+                resultado[contador++] = array[i];
+            }
+        }
+        return resultado;
     }
 
     /**

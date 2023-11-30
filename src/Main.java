@@ -1,4 +1,7 @@
 import tema06.MetodosString;
+
+import java.util.Arrays;
+
 import lib.*;
 import tema06.Ejercicios;
 
@@ -146,7 +149,14 @@ public class Main{
         double[] arrayEstaturas = LibIOArrays.inicializarArrayDouble(posiciones);
         LibIOArrays.solicitarDatosArray(arrayEstaturas);
         double mediaTotal = LibArrays.calcularMediaArray(arrayEstaturas);
-        int mediaMayorQue = LibArrays.contarElementosArray(arrayEstaturas, mediaTotal);
-        System.out.printf("La media de todos los elementos es %.2f y hay %d números mayores que la media total.", mediaTotal, mediaMayorQue);
+        double[] mediaMayorQue = LibArrays.contarElementosArrayMayorQue(arrayEstaturas, mediaTotal);
+        System.out.printf("La media de todos los elementos es %.2f\n", mediaTotal);
+        System.out.printf("Los elementos mayor que la media total %s", Arrays.toString(mediaMayorQue));
+        
+
+        
+
+
+
     } 
 }
