@@ -1,10 +1,14 @@
 package lib;
 
+import java.util.Random;
+
 public class LibIOArrays {
         private static int integerMinValue = Integer.MIN_VALUE;
         private static int integerMaxValue = Integer.MAX_VALUE;
         private static double doubleMinValue = Double.MIN_VALUE;
         private static double doubleMaxValue = Double.MAX_VALUE;
+
+        private static Random rnd = new Random();
     /**
      * Función para mostrar los números de un array de enteros.
      * @param array Array de números enteros.
@@ -93,6 +97,20 @@ public class LibIOArrays {
                 System.out.printf("array[%d] = %.2f\n", i, array[i]);
             }
         }
+    }
+
+    public static int[] arrayAleatorio(int length, int min, int max){
+        if (length < 1){
+            return null;
+        }
+        if (min > max){
+            return null;
+        }
+        int[] resultado = new int[length];
+        for (int i = 0; i < resultado.length; i++){
+            resultado[i] = rnd.nextInt(max - min + 1) + min; 
+        }
+        return resultado;
     }
 
     /**
@@ -188,4 +206,6 @@ public class LibIOArrays {
         String[] arrayString = new String[p];
         return arrayString;
     }
+
+    
 }

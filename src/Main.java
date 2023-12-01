@@ -171,7 +171,7 @@ public class Main{
         double[] mediaMayorQue = LibArrays.contarElementosArrayMayorQue(arrayEstaturas, mediaTotal);
         System.out.printf("La media de todos los elementos es %.2f\n", mediaTotal);
         System.out.printf("Los elementos mayor que la media total %s", Arrays.toString(mediaMayorQue));
-    */
+    
 
         //Ejercicio 18:
         double[] sumaUno = LibIOArrays.inicializarArrayDouble(10);
@@ -183,7 +183,7 @@ public class Main{
         double[] resultadoSuma = LibArrays.sumaArrays(sumaUno, sumaDos);
         double[] resultadoDivision = LibArrays.divisionArrays(sumaUno, sumaDos);
         
-        System.out.printf("Array 1:\n");
+        System.out.printf("Array 1:\n"); 
         LibIOArrays.showArrayInLine(sumaUno);
 
         System.out.printf("Array 2:\n");
@@ -194,5 +194,12 @@ public class Main{
         
         System.out.printf("Resultado División Array 1 / Array 2\n");
         LibIOArrays.showArrayInLine(resultadoDivision);
+    */
+
+        //Ejercicio 19:
+        int[] arrayAleatorio = LibIOArrays.arrayAleatorio(100, 0, 100);
+        //Multiplos de 5
+        int[] a1 = LibArrays.multiplos(arrayAleatorio, 5);
+        LibIOArrays.showArray(a1);
     } 
 }

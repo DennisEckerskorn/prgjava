@@ -122,4 +122,23 @@ public class LibArrays {
         }
         return resultado;
     }
+
+    public static int[] multiplos(int[] array, int multiplo){
+        int contador = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] % multiplo == 0){
+                contador++;
+            }
+        }
+        
+        int[] resultado = new int[contador];
+        contador = 0;
+        for (int i = 0; i < array.length; i++){
+             if(array[i] % multiplo == 0){
+                resultado[contador] = array[i];
+                contador++;
+             }
+        }
+        return resultado;
+    }
 }
