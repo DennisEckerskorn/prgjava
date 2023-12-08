@@ -1,12 +1,10 @@
 package lib;
 import java.util.Random;
-import java.util.Scanner;
 
 public class LibArrays {
     
     private static Random rnd = new Random();
-    private static Scanner lector = new Scanner(System.in);
-
+    
     /**
      * Función que calcula la media de un array de varios números enteros.
      * @param array Array de números enteros.
@@ -270,7 +268,11 @@ public class LibArrays {
             System.out.printf("No se han encontrado múltiplos de 3, rellena el array con la opción 1.\n");
         }
     }
-
+    /**
+     * Función que recibe un array de enteros e invierte el array, es decir el último valor estrá en la primera posición.
+     * @param array Integer
+     * @return devuelve un array de x elementos invertido.
+     */
     public static int[] arrayInvertido(int[] array){
         int[] resultadoInvertido;
         int contador = 0;
@@ -283,5 +285,52 @@ public class LibArrays {
             resultadoInvertido[contador++] = array[i]; 
         }
         return resultadoInvertido;
+    }
+
+    /**
+     * Recibe un array y el número de iteraciones para hacer el sumatorio, guarda el resultado en otro array.
+     * @param array Integer
+     * @param iteraciones Integer
+     * @return devuelve el resultado del sumatorio en un array aparte.
+     */
+    public static int[] arraySumatorio(int[] array, int iteraciones){
+        int[] valorSumatorioV = new int[iteraciones];
+        int[] resultadoSumatorioP = new int[iteraciones];
+        int sumaAcumulativa = 0;
+        for (int i = 0; i < iteraciones; i++){
+            valorSumatorioV [i] = i;
+            sumaAcumulativa = 0;
+            for (int j = 0; j <= i; j++){
+                sumaAcumulativa += valorSumatorioV[j];
+            }
+            resultadoSumatorioP[i] = sumaAcumulativa;
+        }
+        return resultadoSumatorioP;
+    }
+    /**
+     * Función que recibe un array de n elementos y crea otro array con los valores par de ese array inicial. Solo tiene en cuenta los valores que no son igual a 0.
+     * @param arrayV Integer
+     * @param iteraciones Integer
+     * @return devuelve un array con los valores pares del array inicial, sin devolver un valor 0.
+     */
+    public static int[] valorParArray(int[] arrayV, int iteraciones){
+        int[] resultadoPar;
+        int contador = 0;
+
+        for(int i = 0; i < arrayV.length; i++){
+            if(arrayV[i] != 0 && arrayV[i] % 2 == 0){
+                contador++;
+            }
+        }
+
+        resultadoPar = new int[contador];
+        contador = 0;
+
+        for (int i = 0; i < arrayV.length; i++){
+            if(arrayV[i] != 0 && arrayV[i] % 2 == 0){
+                resultadoPar[contador++] = arrayV[i];
+            }
+        }
+        return resultadoPar;
     }
 }

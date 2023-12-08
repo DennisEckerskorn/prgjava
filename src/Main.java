@@ -269,7 +269,22 @@ public class Main{
         LibIOArrays.showArray(arrayNormal);
         LibIOArrays.showArray(arrayInvertido);
 */
+/* 
         //Ejercicio 24:
+        int[] arrayV = new int[50];
+        int[] arrayP = LibArrays.arraySumatorio(arrayV, 50);
+        LibIOArrays.showArray(arrayP);
+*/
+/* 
+        //Ejercicio 25:
+        int[] arrayV;
+        int[] arrayP;
+        arrayV = LibIOArrays.arrayAleatorio(50, 0, 100);
+        arrayP = LibArrays.valorParArray(arrayV, 50);
+        LibIOArrays.showArray(arrayV);
+        LibIOArrays.showArray(arrayP);
+*/
+        //Ejercicio 26:
         
     } 
 
