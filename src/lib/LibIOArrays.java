@@ -15,8 +15,9 @@ public class LibIOArrays {
      */
     public static void showArray(int[] array){
         for (int i = 0; i < array.length; i++){
-             System.out.printf("array[%d] = %d\n", i, array[i]);
-        } 
+             System.out.printf("[%d]=%d  ", i, array[i]);
+        }
+        System.out.printf("\n");
      }
 
      /**
@@ -47,7 +48,7 @@ public class LibIOArrays {
 
      }
 
-     /** Corregir min-value y max-value (Math.max(String.valueOf(min).length)). Ajustar ancho columna sin usar tabulador
+     /**
       * Función que muestra la lista de números del array de forma tabulada, cuando se llega a 4 elementos se añade un salto de línea.
       * @param array array de enteros.
       */
@@ -98,7 +99,13 @@ public class LibIOArrays {
             }
         }
     }
-
+    /**
+     * Crear un array con números aleatorios con longitud, min y max pasados como parámetro.
+     * @param length longitud array
+     * @param min valor min
+     * @param max valor max
+     * @return devuelve el array rellenado con números aleatorios.
+     */
     public static int[] arrayAleatorio(int length, int min, int max){
         if (length < 1){
             return null;
@@ -106,7 +113,9 @@ public class LibIOArrays {
         if (min > max){
             return null;
         }
+
         int[] resultado = new int[length];
+        
         for (int i = 0; i < resultado.length; i++){
             resultado[i] = rnd.nextInt(max - min + 1) + min; 
         }

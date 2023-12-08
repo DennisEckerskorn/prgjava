@@ -194,12 +194,83 @@ public class Main{
         
         System.out.printf("Resultado División Array 1 / Array 2\n");
         LibIOArrays.showArrayInLine(resultadoDivision);
-    */
-
+*/
+/* 
         //Ejercicio 19:
         int[] arrayAleatorio = LibIOArrays.arrayAleatorio(100, 0, 100);
+        
         //Multiplos de 5
         int[] a1 = LibArrays.multiplos(arrayAleatorio, 5);
         LibIOArrays.showArray(a1);
+
+        //Multiplo 10:
+        int[] a2 = LibArrays.multiplos(arrayAleatorio, 10);
+        LibIOArrays.showArray(a2);
+
+        //Resultado 0.
+       int[] a3 = LibArrays.arrayContainsNum(a1, 0);
+       LibIOArrays.showArray(a3);
+*/
+/* 
+       //Ejercicio 20:
+       int[] aRandom = LibIOArrays.arrayAleatorio(100, 0, 100);
+       int[] a1 = LibArrays.arrayContainsNum(aRandom, 55);
+       LibIOArrays.showArray(a1);
+*/
+/* 
+        //Ejercicio 21:
+        int[] aAleatorio = new int[10];
+       
+        int option = 0;
+        boolean validado;
+        do{
+            System.out.printf("MENÚ PRINCIPAL\n");
+            System.out.printf("==============\n");
+            System.out.printf("1. -Rellenar array.\n");
+            System.out.printf("2. -Visualizar contenido array.\n");
+            System.out.printf("3. -Visualizar contenido par.\n");
+            System.out.printf("4. -Visualizar contenido múltiplo 3.\n");
+            System.out.printf("0. -Salir del menú.\n");
+            option = LibEntradaSalida.solicitarEntero("Selecciona una opción.", 0, 4);
+            switch (option){
+                case 1:
+                    LibArrays.crearArray(aAleatorio);
+                    break;
+                case 2:
+                    LibArrays.visualitzarArray(aAleatorio);
+                    break;
+                case 3:
+                    LibArrays.visualitzarParell(aAleatorio);
+                    break;
+                case 4:
+                    LibArrays.visualitzarMultiple3(aAleatorio);
+                    break;
+                case 0:
+                    System.out.printf("Hasta Pronto...\n");
+                    break;
+                default:
+                    System.out.printf("Ingresa un número entre 0 y 4.\n");
+            }
+            validado = option == 0;
+        }while(!validado);
+*/
+/* 
+        //Ejercicio 22:
+        int[] arrayP = LibIOArrays.inicializarArrayInteger(10);
+        LibArrays.crearArray(arrayP);
+        LibIOArrays.showArray(arrayP);
+        int[] arrayS = LibArrays.contarElementosMayoMenor(arrayP, 10);
+        LibIOArrays.showArray(arrayS);
+*/
+/* 
+        //Ejercicio 23:
+        int[] arrayNormal = LibIOArrays.arrayAleatorio(10, 0, 50);
+        int[] arrayInvertido = LibArrays.arrayInvertido(arrayNormal);
+        LibIOArrays.showArray(arrayNormal);
+        LibIOArrays.showArray(arrayInvertido);
+*/
+        //Ejercicio 24:
+        
     } 
+
 }
