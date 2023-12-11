@@ -285,7 +285,34 @@ public class Main{
         LibIOArrays.showArray(arrayP);
 */
         //Ejercicio 26:
+        //Inicialización de la matriz y su tamaño de filas y columnas.
+        int[][] matriz = new int[4][8];
+
+        //Se rellena la matriz con números aleatorios.
+        matriz = LibArrays.matrizRandom(matriz, 100, 0);
         
+        //Se muestran toda la matriz por filas, a):
+        System.out.println("Se muestra la matriz completa, 4 filas, 8 columnas:");
+        LibArrays.mostrarMatrizCompleta(matriz);
+        
+        //Se muestra la matriz traspuesta, b):
+        System.out.println("Se muestra la matriz traspuesta, 4 columnas, 8 valores por columna(filas):");
+        LibArrays.mostrarMatrizTraspuesta(matriz);
+        
+        //Se muestra la matriz por filas con la suma total de cada fila, c):
+        System.out.println("La suma de los valores de cada fila se muestra en la última posicion de la matriz:");
+        int[][] matrizSuma = LibArrays.sumaValoresMatriz(matriz);
+        LibArrays.mostrarMatrizCompleta(matrizSuma);
+        
+        //Valores maximos y minimos de la matriz, d):
+        System.out.println("Se muestra el valor máximo y mínimo de cada fila de la matriz, max = penúltima posicion, min = última posición.");
+        int[][] matrizMaxMin = LibArrays.valoresMaxMinMatriz(matriz);
+        LibArrays.mostrarMatrizCompleta(matrizMaxMin);
+
+        //La media de toda la matriz, e) ¿¿¿Cómo mostrar enteros y la última posición como double???:
+        System.out.println("Se muestra la media de toda la matriz:");
+        double[][] matrizMediaTotal = LibArrays.mediaTotalMatriz(matriz);
+        LibArrays.mostrarMatrizCompleta(matrizMediaTotal);
     } 
 
 }

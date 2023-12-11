@@ -333,4 +333,96 @@ public class LibArrays {
         }
         return resultadoPar;
     }
+
+    public static int[][] matrizRandom(int[][] matriz, int max, int min){
+        for(int i = 0; i < matriz.length; i++){
+            for (int j = 0; j < matriz[i].length; j++){
+                matriz[i][j] = rnd.nextInt(max - min + 1) + min;
+            }
+        }
+        return matriz;
+    }
+
+    public static void mostrarMatrizCompleta(int[][] matriz){
+        for (int i = 0; i < matriz.length; i++){
+            for (int j = 0; j < matriz[i].length; j++){
+                System.out.printf("%d ", matriz[i][j]);
+            } 
+            System.out.printf("\n");
+        }
+    }
+
+     public static void mostrarMatrizCompleta(double[][] matriz){
+        for (int i = 0; i < matriz.length; i++){
+            for (int j = 0; j < matriz[i].length; j++){
+                System.out.printf("%.2f ", matriz[i][j]);
+            } 
+            System.out.printf("\n");
+        }
+    }
+
+    public static void mostrarMatrizTraspuesta(int[][] matriz){
+        for (int j = 0; j < matriz[0].length; j++){
+            for (int i = 0; i < matriz.length; i++){
+                System.out.printf("%d ", matriz[i][j]);
+            }
+            System.out.printf("\n");
+        }
+    }
+
+    public static int[][] sumaValoresMatriz(int[][] matriz){
+        int[][] matrizResultado = new int[matriz.length][matriz[0].length + 1];
+        for (int i = 0; i < matriz.length; i++){
+            int sumaFila = 0;
+            for (int j = 0; j < matriz[i].length; j++){
+                matrizResultado[i][j] = matriz[i][j];
+                sumaFila += matriz[i][j];
+            }
+            matrizResultado[i][matriz[0].length] = sumaFila;
+        }
+        return matrizResultado;
+    }
+
+    /**
+     * Función que busca el valor máximo y mínimo de cada fila de la matriz, el valor se guarda max = penúltima posición, min = última posicion.
+     * @param matriz matriz Integer.
+     * @return devuelve una nueva matriz con la longitud + 2, para añadir los valores max y min.
+     */
+    public static int[][] valoresMaxMinMatriz(int[][] matriz){
+        int[][] matrizResultado = new int[matriz.length][matriz[0].length + 2];
+        for(int i = 0; i < matriz.length; i++){
+            int valorMaximo = matriz[i][0]; //Asumimos la primera posicion como valor máximo, se actualiza.
+            int valorMinimo = matriz[i][0]; //Asumimos la segunda posicion como valor mínimo, se actualiza.
+            for (int j = 0; j < matriz[i].length; j++){
+                int valorActual = matriz[i][j];
+                //Se actualiza el máximo si es necesario.
+                if(valorActual > valorMaximo){
+                    valorMaximo = valorActual;
+                }
+                //Se actualiza el valor mínimo si es necesario.
+                if(valorActual < valorMinimo){
+                    valorMinimo = valorActual;
+                }
+                
+                matrizResultado[i][j] = valorActual;
+            }
+            //Se guarda el valor máximo en la penúltima posición y el mínimo en la última.
+            matrizResultado[i][matriz[0].length] = valorMaximo;
+            matrizResultado[i][matriz[0].length + 1] = valorMinimo;
+        }
+        return matrizResultado;
+    }
+
+    public static double[][] mediaTotalMatriz(int[][] matriz){
+        double[][] matrizResultado = new double[matriz.length][matriz[0].length + 1];
+        for (int i = 0; i < matriz.length; i++){
+            int suma = 0;
+            for (int j = 0; j < matriz[i].length; j++){
+                matrizResultado[i][j] = matriz[i][j];
+                suma += matriz[i][j];
+            }
+            matrizResultado[i][matriz[i].length] = (double) suma / matriz[i].length;
+        }
+        return matrizResultado;
+    }
 }
