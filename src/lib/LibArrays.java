@@ -307,13 +307,36 @@ public class LibArrays {
         }
         return resultadoSumatorioP;
     }
+
     /**
-     * Función que recibe un array de n elementos y crea otro array con los valores par de ese array inicial. Solo tiene en cuenta los valores que no son igual a 0.
+     * Función que recorre un array para ver si todas las posiciones no son igual a 0, si lo son se muestra un mensaje.
+     * El contador solo incrementa si el valor es diferente a 0, de este modo sse asegura que cada posición contiene el valor 0.
+     * @param array Integer
+     * @param mensaje String
+     * @return StringBuilder con el mensaje en caso de ser un array nulo.
+     */
+    public static String mostrarMensajeArrayNulo(int[] array, String mensaje){
+        StringBuilder sb = new StringBuilder();
+        int contador = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] != 0){
+                contador++;
+            }
+        }
+        if(contador == 0){
+            sb.append(mensaje);
+        }
+        return sb.toString();
+    }
+
+    /**
+     * Función que recibe un array de n elementos y crea otro array con los valores par de ese array inicial.
+     * Solo tiene en cuenta los valores que no son igual a 0.
      * @param arrayV Integer
      * @param iteraciones Integer
-     * @return devuelve un array con los valores pares del array inicial, sin devolver un valor 0.
+     * @return array int[] con los valores pares desde el  array inicial, sin devolver un valor 0. 
      */
-    public static int[] valorParArray(int[] arrayV, int iteraciones){
+    public static int[] valorParArray(int[] arrayV){
         int[] resultadoPar;
         int contador = 0;
 

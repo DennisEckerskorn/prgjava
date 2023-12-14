@@ -280,10 +280,12 @@ public class Main{
         int[] arrayV;
         int[] arrayP;
         arrayV = LibIOArrays.arrayAleatorio(50, 0, 100);
+        String mensajeNulo = LibArrays.mostrarMensajeArrayNulo(arrayV, "Los valores del array son 0.");
+        System.out.println(mensajeNulo);
         arrayP = LibArrays.valorParArray(arrayV);
         LibIOArrays.showArray(arrayV);
         LibIOArrays.showArray(arrayP);
-
+/* 
         //Ejercicio 26:
         //Inicialización de la matriz y su tamaño de filas y columnas.
         int[][] matriz = new int[4][8];
@@ -313,6 +315,7 @@ public class Main{
         System.out.println("Se muestra la media de toda la matriz:");
         double[][] matrizMediaTotal = LibArrays.mediaTotalMatriz(matriz);
         LibArrays.mostrarMatrizCompleta(matrizMediaTotal);
+*/
     } 
 
 }
