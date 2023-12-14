@@ -195,7 +195,7 @@ public class Main{
         System.out.printf("Resultado División Array 1 / Array 2\n");
         LibIOArrays.showArrayInLine(resultadoDivision);
 */
-
+/* 
         //Ejercicio 19:
         int[] arrayAleatorio = LibIOArrays.arrayAleatorio(100, 0, 100);
         
@@ -212,7 +212,7 @@ public class Main{
        LibIOArrays.showArray(a3);
 
 
-       //Ejercicio 20:
+       //Ejercicio 20: Modificar para devolver true and false con indexOf y el numero.
        int[] aRandom = LibIOArrays.arrayAleatorio(100, 0, 100);
        int[] a1 = LibArrays.arrayContainsNum(aRandom, 55);
        LibIOArrays.showArray(a1);
@@ -274,13 +274,13 @@ public class Main{
         int[] arrayV = new int[50];
         int[] arrayP = LibArrays.arraySumatorio(arrayV, 50);
         LibIOArrays.showArray(arrayP);
-
+*/
 
         //Ejercicio 25:
         int[] arrayV;
         int[] arrayP;
         arrayV = LibIOArrays.arrayAleatorio(50, 0, 100);
-        arrayP = LibArrays.valorParArray(arrayV, 50);
+        arrayP = LibArrays.valorParArray(arrayV);
         LibIOArrays.showArray(arrayV);
         LibIOArrays.showArray(arrayP);
 
