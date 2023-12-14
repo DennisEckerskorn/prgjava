@@ -195,7 +195,7 @@ public class Main{
         System.out.printf("Resultado División Array 1 / Array 2\n");
         LibIOArrays.showArrayInLine(resultadoDivision);
 */
-/* 
+
         //Ejercicio 19:
         int[] arrayAleatorio = LibIOArrays.arrayAleatorio(100, 0, 100);
         
@@ -210,14 +210,14 @@ public class Main{
         //Resultado 0.
        int[] a3 = LibArrays.arrayContainsNum(a1, 0);
        LibIOArrays.showArray(a3);
-*/
-/* 
+
+
        //Ejercicio 20:
        int[] aRandom = LibIOArrays.arrayAleatorio(100, 0, 100);
        int[] a1 = LibArrays.arrayContainsNum(aRandom, 55);
        LibIOArrays.showArray(a1);
-*/
-/* 
+
+
         //Ejercicio 21:
         int[] aAleatorio = new int[10];
        
@@ -253,29 +253,29 @@ public class Main{
             }
             validado = option == 0;
         }while(!validado);
-*/
-/* 
+
+
         //Ejercicio 22:
         int[] arrayP = LibIOArrays.inicializarArrayInteger(10);
         LibArrays.crearArray(arrayP);
         LibIOArrays.showArray(arrayP);
         int[] arrayS = LibArrays.contarElementosMayoMenor(arrayP, 10);
         LibIOArrays.showArray(arrayS);
-*/
-/* 
+
+ 
         //Ejercicio 23:
         int[] arrayNormal = LibIOArrays.arrayAleatorio(10, 0, 50);
         int[] arrayInvertido = LibArrays.arrayInvertido(arrayNormal);
         LibIOArrays.showArray(arrayNormal);
         LibIOArrays.showArray(arrayInvertido);
-*/
-/* 
+
+
         //Ejercicio 24:
         int[] arrayV = new int[50];
         int[] arrayP = LibArrays.arraySumatorio(arrayV, 50);
         LibIOArrays.showArray(arrayP);
-*/
-/* 
+
+
         //Ejercicio 25:
         int[] arrayV;
         int[] arrayP;
@@ -283,7 +283,7 @@ public class Main{
         arrayP = LibArrays.valorParArray(arrayV, 50);
         LibIOArrays.showArray(arrayV);
         LibIOArrays.showArray(arrayP);
-*/
+
         //Ejercicio 26:
         //Inicialización de la matriz y su tamaño de filas y columnas.
         int[][] matriz = new int[4][8];
