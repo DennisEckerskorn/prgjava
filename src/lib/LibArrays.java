@@ -276,11 +276,7 @@ public class LibArrays {
     public static int[] arrayInvertido(int[] array){
         int[] resultadoInvertido;
         int contador = 0;
-        for (int i = 0; i < array.length; i++){
-            contador++;
-        }
         resultadoInvertido = new int[contador];
-        contador = 0;
         for (int i = array.length -1; i >= 0; i--){
             resultadoInvertido[contador++] = array[i]; 
         }
