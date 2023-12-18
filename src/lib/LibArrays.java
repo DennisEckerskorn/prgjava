@@ -352,6 +352,30 @@ public class LibArrays {
         }
         return resultadoPar;
     }
+    
+    /**
+     * Función para ordenar un array de int de menor a mayor.
+     * Se usan dos índices para recorrer el array i desde la posicion 0 hasta la penúltima y j desde la primera hasta la última pocisicón.
+     * Si el valor de j es menor que el valor de i se intercambia.
+     * @param array int
+     * @return array ordenado de menor a mayor.
+     */
+    public static int[] ordenarArray(int[] array){
+        int aux;
+        int valorMinimo;
+        for (int i = 0; i < array.length - 1; i++){
+            valorMinimo = i;
+            for(int j = i + 1; j < array.length; j++){
+                if(array[j] < array[valorMinimo]){
+                    valorMinimo = j;
+                }
+            }
+            aux = array[valorMinimo];
+            array[valorMinimo] = array[i];
+            array[i] = aux;
+        }
+        return array;
+    }
 
     public static int[][] matrizRandom(int[][] matriz, int max, int min){
         for(int i = 0; i < matriz.length; i++){
