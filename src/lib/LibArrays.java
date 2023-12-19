@@ -376,6 +376,31 @@ public class LibArrays {
         }
         return array;
     }
+    /**
+     * Funcion que ordena un array usando countSort, recorre el array y cuenta en un segundo array las apariciones del primer array.
+     * Luego descomprime el array y asigna el valor del segundo array a las posiciones.
+     * array1 = 0, 3, 5, 3, 5, 2;
+     * array2 = 1, 1, 2, 2;
+     * array3 = 0, 3, 3, 5, 5;
+     * @param array int
+     * @return array de int ordenado.
+     */
+    public static int[] ordenarCount(int[] array){
+        int max = maximoArray(array); //Crear metodo que calcula el maximo de un array
+        int[] resultado = new int[max + 1];
+        int[] resultadoFinal = new int[array.length];
+        int contador = 0; 
+        for (int i = 0; i < array.length; i++){
+            resultado[array[i]]++;
+        }
+        contador = 0;
+        for(int i = 0; i < resultado.length; i++){
+             for (int j = 0; j < resultado[i]; j++){
+                resultadoFinal[contador++] = i;
+            } 
+        }
+        return resultadoFinal;
+    }
 
     public static int[][] matrizRandom(int[][] matriz, int max, int min){
         for(int i = 0; i < matriz.length; i++){

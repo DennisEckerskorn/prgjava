@@ -286,6 +286,8 @@ public class Main{
         LibIOArrays.showArray(arrayV);
         LibIOArrays.showArray(arrayP);
  */
+/*
+ 
         //Ejercicio clase, ordenar array.
         int[] array;
         array = LibIOArrays.arrayAleatorio(20, 0, 100);
@@ -294,7 +296,19 @@ public class Main{
         array = LibArrays.ordenarArray(array);
         System.out.println("Array aleatorio ordenado de menor a mayor");
         LibIOArrays.showArray(array);
-/* 
+ */
+        //Ejercicio en clase, ordenador array countSort:
+        int[] arrayA;
+        arrayA = LibIOArrays.arrayAleatorio(10, 0, 5);
+        System.out.println("Array aleatorio");
+        LibIOArrays.showArray(arrayA);
+        arrayA = LibArrays.ordenarCount(arrayA);
+        System.out.println("Array count");
+        LibIOArrays.showArray(arrayA);
+       
+        
+
+/*        
         //Ejercicio 26:
         //Inicialización de la matriz y su tamaño de filas y columnas.
         int[][] matriz = new int[4][8];
@@ -325,7 +339,5 @@ public class Main{
         double[][] matrizMediaTotal = LibArrays.mediaTotalMatriz(matriz);
         LibArrays.mostrarMatrizCompleta(matrizMediaTotal);
 */
-        
     } 
-
 }
