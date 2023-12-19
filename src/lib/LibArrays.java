@@ -387,7 +387,7 @@ public class LibArrays {
      */
     public static int[] ordenarCount(int[] array){
         int max = maximoArray(array); //Crear metodo que calcula el maximo de un array
-        int[] resultado = new int[max + 1];
+        int[] resultado = new int[max];
         int[] resultadoFinal = new int[array.length];
         int contador = 0; 
         for (int i = 0; i < array.length; i++){
@@ -400,6 +400,19 @@ public class LibArrays {
             } 
         }
         return resultadoFinal;
+    }
+
+    /**
+     * Funcion que cuenta las posiciones que hay en un array.
+     * @param array int
+     * @return las posiciones totales de un array.
+     */
+    public static int maximoArray(int[] array){
+        int contador = 0;
+        for (int i = 0; i < array.length; i++){
+            contador++;
+        }
+        return contador;
     }
 
     public static int[][] matrizRandom(int[][] matriz, int max, int min){

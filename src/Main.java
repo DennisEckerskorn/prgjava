@@ -300,6 +300,8 @@ public class Main{
         //Ejercicio en clase, ordenador array countSort:
         int[] arrayA;
         arrayA = LibIOArrays.arrayAleatorio(10, 0, 5);
+        int tamanoArray = LibArrays.maximoArray(arrayA);
+        System.out.println(tamanoArray);
         System.out.println("Array aleatorio");
         LibIOArrays.showArray(arrayA);
         arrayA = LibArrays.ordenarCount(arrayA);
