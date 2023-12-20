@@ -297,6 +297,7 @@ public class Main{
         System.out.println("Array aleatorio ordenado de menor a mayor");
         LibIOArrays.showArray(array);
  */
+/* 
         //Ejercicio en clase, ordenador array countSort:
         int[] arrayA;
         arrayA = LibIOArrays.arrayAleatorio(10, 0, 5);
@@ -307,8 +308,14 @@ public class Main{
         arrayA = LibArrays.ordenarCount(arrayA);
         System.out.println("Array count");
         LibIOArrays.showArray(arrayA);
-       
-        
+  */     
+        //Ejercicio en clase, ordenacion burbuja:
+        int[] arrayC;
+        arrayC = LibIOArrays.arrayAleatorio(20, 1, 50);
+        LibIOArrays.showArray(arrayC);
+        arrayC = LibArrays.ordenacionBurbuja(arrayC);
+        LibIOArrays.showArray(arrayC);
+
 
 /*        
         //Ejercicio 26:

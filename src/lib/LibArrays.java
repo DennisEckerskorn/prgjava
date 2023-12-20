@@ -415,6 +415,105 @@ public class LibArrays {
         return contador;
     }
 
+    //Correcion en clase:
+
+    public static int[] countingSort(int[] array){
+        ArrayStats stats = new ArrayStats(array);
+        if (stats.getNegativeCount() > 0){
+            return null;
+        }
+        int[] result = new int[array.length];
+        int[] counter = new int[stats.getMax() + 1];
+        for (int i=0; i < array.length; i++){
+            int value = array[i];
+            counter[value]++;
+        }
+        int index = 0;
+        for (int i = 0; i < counter.length; i++){
+            int value = counter[i];
+            for (int j = 0; j < value; j++){
+                result[index++] = i;
+            }
+        }
+        return result;
+    }
+    
+    public static class ArrayStats{
+        private int min;
+        private int max;
+        private long sum;
+        private double mean;
+        private int positiveCount;
+        private int negativeCount;
+        private final int[] array;
+        public ArrayStats(int[] array){
+            this.array = array;
+            getStats();
+        }
+        private void getStats(){
+                min = array[0];
+                max = array[0];
+                mean = 0;
+                sum = 0;
+                positiveCount = 0;
+                negativeCount = 0;
+                for(int value : array){
+                    sum += value;
+                    if (value > max){
+                        max = value;
+                    }
+                    if (value < min){
+                        min = value;
+                    }
+                    if (value < 0){
+                        negativeCount++;
+                    } else if (value > 0){
+                        positiveCount++;
+                    }
+                    mean = (double) sum / array.length;                
+                }
+        }
+        public int getMin(){
+            return min;
+        }
+        public int getMax(){
+            return max;
+        }
+        public long getSum(){
+            return sum;
+        }
+        public double getMean(){
+            return mean;
+        }
+        public int getPositiveCount(){
+            return positiveCount;
+        }
+        public int getNegativeCount(){
+            return negativeCount;
+        }
+    }
+
+    /**
+     * Funcion que ordena un array intercambiando valores, si el valor es menor lo intercambia.
+     * Resulta en muchas pasadas ya que tiene que iterar muchas veces sobre el array hasta ordenar cada número.
+     * @param array
+     * @return
+     */
+    public static int[] ordenacionBurbuja(int[] array){
+        int temp;
+        for (int i = 0; i < array.length - 1; i++){
+            for(int j = 0; j < array.length - i - 1; j++){
+                if(array[j + 1] < array[j]){
+                    temp = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+
     public static int[][] matrizRandom(int[][] matriz, int max, int min){
         for(int i = 0; i < matriz.length; i++){
             for (int j = 0; j < matriz[i].length; j++){
