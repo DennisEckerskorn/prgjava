@@ -311,7 +311,7 @@ public class Main{
   */     
         //Ejercicio en clase, ordenacion burbuja:
         int[] arrayC;
-        arrayC = LibIOArrays.arrayAleatorio(20, 1, 50);
+        arrayC = LibIOArrays.arrayAleatorio(35, 1, 50);
         LibIOArrays.showArray(arrayC);
         arrayC = LibArrays.ordenacionBurbuja(arrayC);
         LibIOArrays.showArray(arrayC);
